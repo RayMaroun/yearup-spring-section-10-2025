@@ -37,15 +37,17 @@ Today we will be creating a simple command line application in Java that takes u
 
 ## Step 7 - Comparing Strings
 
-13. Add a new if statement to your code that checks whether the user's name is equal to "Alice".
-14. If the user's name is Alice, print out a message welcoming her.
-15. If the user's name is not Alice, print out a generic message.
+1. Create a new method in your MyApplication class that checks whether the user's name is equal to "Alice".
+2. If the user's name is Alice, print out a message welcoming her.
+3. If the user's name is not Alice, print out a generic message.
+4. Call this method from your main method and pass the user's name to it.
 
 ## Step 8 - Using if statement with logical operators
 
-16. Add a new if statement to your code that checks whether the user's name is equal to "Bob" and their age is greater than or equal to 21.
-17. If both conditions are true, print out a message saying they are old enough to drink.
-18. If either condition is false, print out a message saying they are not old enough to drink.
+1. Create a new method in your MyApplication class that checks whether the user's name is equal to "Bob" and their age is greater than or equal to 21.
+2. If both conditions are true, print out a message saying they are old enough to drink.
+3. If either condition is false, print out a message saying they are not old enough to drink.
+4. Call this method from your main method, passing the user's name and age as arguments.
 
 ## Step 9 - Using the Math library
 
