@@ -1,21 +1,44 @@
 package com.pluralsight;
 
+/**
+ * Represents a single book in the library.
+ * A book can be checked out to exactly one person at a time.
+ */
 public class Book {
-    private int id;
-    private String isbn;
-    private String title;
-    private boolean isCheckedOut;
-    private String checkedOutTo;
 
+    /* --------------------------------------------------------------------------
+       Fields
+       -------------------------------------------------------------------------- */
+
+    private final int id;           // numeric id (chosen by the library)
+    private final String isbn;         // international standard book number
+    private final String title;        // book title
+    private boolean checkedOut;   // true if currently borrowed
+    private String checkedOutTo; // name of the borrower (empty when in library)
+
+    /* --------------------------------------------------------------------------
+       Constructor
+       -------------------------------------------------------------------------- */
+
+    /**
+     * Creates a new book that starts on the shelf (not checked out).
+     *
+     * @param id    numeric id assigned by the library
+     * @param isbn  ISBN of the book
+     * @param title title and author
+     */
     public Book(int id, String isbn, String title) {
         this.id = id;
         this.isbn = isbn;
         this.title = title;
-        isCheckedOut = false;
-        checkedOutTo = "";
+        this.checkedOut = false;
+        this.checkedOutTo = "";
     }
 
-    // getters and setters
+    /* --------------------------------------------------------------------------
+       Getters
+       -------------------------------------------------------------------------- */
+
     public int getId() {
         return id;
     }
@@ -29,25 +52,32 @@ public class Book {
     }
 
     public boolean isCheckedOut() {
-        return isCheckedOut;
+        return checkedOut;
     }
 
     public String getCheckedOutTo() {
         return checkedOutTo;
     }
 
-    public void setCheckedOutTo(String name) {
-        checkedOutTo = name;
-    }
+    /* --------------------------------------------------------------------------
+       Public actions
+       -------------------------------------------------------------------------- */
 
-    // methods
+    /**
+     * Checks the book out to the given person.
+     *
+     * @param name borrower’s name
+     */
     public void checkOut(String name) {
-        isCheckedOut = true;
-        checkedOutTo = name;
+        this.checkedOut = true;
+        this.checkedOutTo = name;
     }
 
+    /**
+     * Returns the book to the library.
+     */
     public void checkIn() {
-        isCheckedOut = false;
-        checkedOutTo = "";
+        this.checkedOut = false;
+        this.checkedOutTo = "";
     }
 }
