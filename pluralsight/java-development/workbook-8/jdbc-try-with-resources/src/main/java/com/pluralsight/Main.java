@@ -23,6 +23,14 @@ public class Main {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
+
+            String query = """
+                    SELECT first_name, last_name
+                    FROM customer
+                    WHERE last_name LIKE ?
+                    ORDER BY first_name;
+                    """;
+
             try (
                     Connection connection = DriverManager.getConnection(
                             "jdbc:mysql://localhost:3306/sakila",
@@ -31,14 +39,7 @@ public class Main {
                     );
 
 
-                    PreparedStatement preparedStatement = connection.prepareStatement(
-                            """
-                                    SELECT first_name, last_name
-                                    FROM customer
-                                    WHERE last_name LIKE ?
-                                    ORDER BY first_name;
-                                    """
-                    );
+                    PreparedStatement preparedStatement = connection.prepareStatement(query)
             ) {
 
 
