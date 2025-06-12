@@ -1,6 +1,4 @@
-=============================
 **SQL/JDBC REVIEW**
-=============================
 
 1. **SQL (Structured Query Language)**:
 
